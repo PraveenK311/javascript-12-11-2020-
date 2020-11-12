@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+     <title>Movie App</title>
+  </head>
+  <style>
+  
+  </style>
+  <body>
+    <div class="container">
+      <h1 style="color: yellow" >IMDB</h1>
+      <form>
+        <div class="form-group">
+         <label for="movie">Movie name</label> 
+          <input
+            type="text"
+            class="form-control"
+            id="Movie"
+            aria-describedby="emailHelp"
+            placeholder="Search..."
+          />
+        </div>
+
+        <button type="submit" class="btn btn-danger btn-block" id="search">
+          Search a movie
+        </button>
+      </form>
+ <div id ="result"></div>
+      <br>
+<div class="slideshow-container">
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="https://cdn.wealthygorilla.com/wp-content/uploads/2020/02/The-Best-Amazon-Prime-Movies.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://i.gadgets360cdn.com/large/best_movies_on_amazon_prime_august_2020_1597408336879.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+   <img src="https://images.indianexpress.com/2016/12/amazon-prime-video-12002.jpg" style="width:100%">
+
+    <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+    <h5>Enjoy Unlimited Streaming on Prime vedio
+  <a href="https://www.amazon.com/gp/redirect.html?location=https://www.primevideo.com/ref=dvm_CRS_IMD_promobar&token=5AA88DFA9D67585B16D08920442C28AB49C39F2B&source=standards">
+    Thousands of titles available to watch instantly 
+  </a>
+</h5>
+<div id="quicklinksMainSection">
+         <a href="https://www.imdb.com/title/tt0120737/fullcredits?ref_=tt_ql_1" class="quicklink">FULL CAST AND CREW</a> 
+         <span class="ghost">|</span>
+         <a href="https://www.imdb.com/title/tt0120737/trivia?ref_=tt_ql_2" class="quicklink">TRIVIA</a>
+          <span class="ghost">|</span>
+         <a href="https://www.imdb.com/title/tt0120737/reviews?ref_=tt_ql_3" class="quicklink">USER REVIEWS</a>
+          <span class="ghost">|</span>
+         <a href="https://pro.imdb.com/title/tt0120737?rf=cons_tt_contact&ref_=cons_tt_contact" class="quicklink">IMDbPro</a>
+         <span class="ghost">|</span>
+         <span class="show_more quicklink">MORE<span class="titleOverviewSprite quicklinksArrowUp"></span>
+        </span>
+  </div>
+      <h1 class="long">Spiderman movie </h1>
+       <div id="movies-searchable"></div>
+      <div id="movies-container"></div>
+  </div>
+
+      <div id="movies-searchable"></div>
+      <div id="movies-container"></div>
+    </div>
+
+    <script src="apipart.js"></script>
+    <script src="app.js"></script>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+   
+<div class= "socialmediaicons">
+   <a href="javascript:void(0)" class="fa fa-facebook">Facebook</a><br>|
+   <a href="javascript:void(0)" class="fa fa-instagram">Instagram</a><br>|
+   <a href="javascript:void(0)" class="fa fa-twitter">Twitter</a><br>|
+   <a href="javascript:void(0)" class="fa fa-google">Google+</a><br>|
+   <a href="javascript:void(0)" class="fa fa-youtube">Youtube</a><br>|
+   <a href="javascript:void(0)" class="fa fa-android">Android</a><br>|
+   
+</div>
+
+  </body>
+</html>
